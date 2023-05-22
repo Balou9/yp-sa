@@ -2,6 +2,10 @@
 
 This is a summary with vulnerabilites of medium impact. A complete report can be found [here](./yieldprotocol-slither-report.md). Vulnerabilities of high impact could not be found.
 
+# POC
+The complete report can be recreated by running [yp_sa.sh](./yp_sa.sh). Make sure to have git, slither-analyzer and solc-select preinstalled.
+
+# Summary
  - [unused-return-yield-utils-v2](#unused-return-yield-utils-v2) (1 results) (Impact: Medium)
  - [reentrancy-no-eth-I-yield-utils-v2](#reentrancy-no-eth-I-yield-utils-v2) (7 results) (Impact: Medium)
  - [mapping-deletion-yield-utils-v2](#mapping-deletion-yield-utils-v2) (1 results) (Impact: Medium)
@@ -499,3 +503,7 @@ vault-v2/src/other/tether/IUSDT.sol#L7-L34
 [IUSDT](vault-v2/src/other/tether/IUSDT.sol#L7-L34) has incorrect ERC20 function interface:[IUSDT.approve(address,uint256)](vault-v2/src/other/tether/IUSDT.sol#L22)
 
 vault-v2/src/other/tether/IUSDT.sol#L7-L34
+
+## References
+
+https://github.com/crytic/slither

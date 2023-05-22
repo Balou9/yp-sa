@@ -1,15 +1,10 @@
 #!/bin/bash
 # remove all security analysis attempt
-# ls | grep "sa$" | while read -r line
-# do
-#   printf '%s\n' "$line" && rm -rf "$line"
-# done
-
 # PREREQUESITES
 # git
 # slither-analyzer
 # solc-select
-user_name=$1
+user_name="yieldprotocol"
 repos=(
   "vault-v2"
   "yieldspace-tv"
