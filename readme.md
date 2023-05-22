@@ -19,11 +19,11 @@ Ensure that all the return values of the function calls are used.
 #### Description
 Impact: Medium
 Confidence: Medium
+Smart contract under scope: https://github.com/yieldprotocol/yield-utils-v2/tree/main/lib/forge-std/lib/ds-test/demo/demo.sol
 - [ ] ID-0
 [DemoTest.test_trace()](yield-utils-v2/lib/forge-std/lib/ds-test/demo/demo.sol#L43-L45) ignores return value by [this.echo(string 1,string 2)](yield-utils-v2/lib/forge-std/lib/ds-test/demo/demo.sol#L44)
 
 yield-utils-v2/lib/forge-std/lib/ds-test/demo/demo.sol#L43-L45
-
 
 ### reentrancy-no-eth-I-yield-utils-v2
 #### Recommendation
@@ -32,6 +32,7 @@ Apply the [check-effects-interactions](https://docs.soliditylang.org/en/v0.4.21/
 #### Description
 Impact: Medium
 Confidence: Medium
+Smart contract under scope: https://github.com/yieldprotocol/yield-utils-v2/tree/main/src/token/ERC20Rewards.sol
 - [ ] ID-0
 Reentrancy in [ERC20Rewards._updateRewardsPerToken()](yield-utils-v2/src/token/ERC20Rewards.sol#L104-L124):
 	External calls:
@@ -188,6 +189,7 @@ Use a lock mechanism instead of a deletion to disable structure containing a map
 #### Description
 Impact: Medium
 Confidence: High
+Smart contract under scope: https://github.com/yieldprotocol/yield-utils-v2/tree/main/src/utils/EmergencyBrake.sol
 - [ ] ID-0
 [EmergencyBrake._erase(address)](yield-utils-v2/src/utils/EmergencyBrake.sol#L175-L192) deletes [IEmergencyBrake.Plan](yield-utils-v2/src/interfaces/IEmergencyBrake.sol#L7-L11) which contains a mapping:
 	-[delete plans[user]](yield-utils-v2/src/utils/EmergencyBrake.sol#L191)
@@ -201,6 +203,7 @@ Initialize all the variables. If a variable is meant to be initialized to zero, 
 #### Description
 Impact: Medium
 Confidence: Medium
+Smart contract under scope: https://github.com/yieldprotocol/yield-utils-v2/tree/main/src/utils/EmergencyBrake.sol
 - [ ] ID-1
 [EmergencyBrake.add(address,IEmergencyBrake.Permission[]).i](yield-utils-v2/src/utils/EmergencyBrake.sol#L94) is a local variable never initialized
 
@@ -219,6 +222,7 @@ Consider ordering multiplication before division.
 #### Description
 Impact: Medium
 Confidence: Medium
+Smart contract under scope: https://github.com/yieldprotocol/yield-utils-v2/tree/main/src/utils/Math.sol
 - [ ] ID-0
 [Math.wpow(uint256,uint256)](yield-utils-v2/src/utils/Math.sol#L41-L116) performs a multiplication on the result of a division:
 	- [x = xxRound_wpow_asm_0 / baseUnit](yield-utils-v2/src/utils/Math.sol#L91)
@@ -234,6 +238,7 @@ Apply the [check-effects-interactions](https://docs.soliditylang.org/en/v0.4.21/
 #### Description
 Impact: Medium
 Confidence: Medium
+Smart contract under scope: https://github.com/yieldprotocol/yield-utils-v2/tree/main/src/token/ERC20Rewards.sol
  - [ ] ID-0
 Reentrancy in [ERC20Rewards._updateRewardsPerToken()](yield-utils-v2/src/token/ERC20Rewards.sol#L104-L124):
 	External calls:
@@ -391,6 +396,7 @@ Fix or remove the writes.
 #### Description
 Impact: Medium
 Confidence: High
+Smart contract under scope: https://github.com/yieldprotocol/vault-v2/tree/main/src/mocks/oracles/OracleMock.sol
 - [ ] ID-0
 [OracleMock.updated](vault-v2/src/mocks/oracles/OracleMock.sol#L12) is written in both
 	[updated = block.timestamp](vault-v2/src/mocks/oracles/OracleMock.sol#L25)
@@ -405,6 +411,7 @@ Consider ordering multiplication before division.
 #### Description
 Impact: Medium
 Confidence: Medium
+Smart contract under scope: https://github.com/yieldprotocol/vault-v2/tree/main/src/oracles/uniswap/uniswapv0.8/FullMath.sol
 - [ ] ID-0
 [FullMath.mulDiv(uint256,uint256,uint256)](vault-v2/src/oracles/uniswap/uniswapv0.8/FullMath.sol#L14-L106) performs a multiplication on the result of a division:
 	- [denominator = denominator / twos](vault-v2/src/oracles/uniswap/uniswapv0.8/FullMath.sol#L67)
@@ -475,6 +482,7 @@ Set the appropriate return values and types for the defined ERC20 functions.
 #### Description
 Impact: Medium
 Confidence: High
+Smart contract under scope: https://github.com/yieldprotocol/vault-v2/tree/main/src/other/tether/IUSDT.sol
 - [ ] ID-0
 [IUSDT](vault-v2/src/other/tether/IUSDT.sol#L7-L34) has incorrect ERC20 function interface:[IUSDT.transfer(address,uint256)](vault-v2/src/other/tether/IUSDT.sol#L28)
 
